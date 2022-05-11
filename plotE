@@ -1,0 +1,15 @@
+#!/usr/bin/gnuplot
+set colors classic
+
+set title "Energy"
+
+#1  2  3    4    5    6
+#E EFF Epot Ekin Eint Eext
+plot [x=:][:] \
+"oute.dat" u 1 w l t "total energy",\
+"oute.dat" u 4 w l t "kinetic energy",\
+"oute.dat" u 5 w l t "interaction potential energy",\
+"oute.dat" u 6 w l t "external potential energy"
+
+pause -1
+

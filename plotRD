@@ -1,0 +1,15 @@
+#!/usr/bin/gnuplot
+set colors classic
+
+!AnalOBDM outrd.dat rd.dat
+
+plot [r=:][:] "outrd.dat" w p
+pause -1
+
+plot [r=:][0:0.07] "outrd.dat" w p, "rd.dat" w e 
+pause -1
+
+#set term postscript
+#set output "g2.ps"
+#replot
+#set output

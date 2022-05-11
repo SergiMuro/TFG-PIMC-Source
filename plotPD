@@ -1,0 +1,57 @@
+#!/usr/bin/gnuplot
+set colors classic
+set mxtics
+set mytics
+set style line 12 lc rgb '#ddccdd' lt 1 lw 1.5
+set style line 13 lc rgb '#ddccdd' lt 1 lw 0.5
+set grid xtics mxtics ytics mytics back ls 12, ls 13
+set terminal windows color solid enhanced fontscale 2 linewidth 2
+set size ratio 2./3.
+set samples 1000
+set encoding utf8
+set fit errorvariables
+# Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω
+# α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σς τ υ φ χ ψ ω
+# ħ² Å ∞ ↑ ↓ → ← ± ² ³ °
+
+
+#set format y "%.3f"
+#set datafile missing "GNUPLOTSKIP"
+#set datafile missing "NaN"
+#set datafile missing "**"
+#set title "`hostname | sed 's/\..*/:/'``pwd`"
+
+#set ylabel "E" font 'Times New Roman Italic Bold, 14' rotate by 0
+
+!AnalOBDM outpd.dat pd.dat 
+
+plot [x=] "outpd.dat" u 1:2 w p
+pause -1
+
+f(x) = a*x+b
+set fit errorvariables # add _err to variable to access its error
+fit [x=:][:] f(x) ".dat" u 1:2 via a,b
+replot f(x) title sprintf("a = %.2f ± %.2f", a, a_err)
+#save var "par.dat"
+#set print "fit.dat" append
+#print sprintf("%f %f", a, b)
+
+exit
+set terminal postscript enhanced colour
+set output ".eps"
+replot
+set output
+
+#set terminal jpeg enhanced size 1600,1200 large
+#set term jpeg font "arial,22"
+#set pointsize 5
+
+set multiplot
+set size 0.5,1
+set origin 0.0,0.
+plot [0:][:] "in3Dprev.in" u 1:2 with circles lc rgb "red"  fs transparent solid 0.05 noborder t "(x-y)"
+
+set origin 0.5,0.
+plot [0:][:] "in3Dprev.in" u 2:3 with circles lc rgb "green"  fs transparent solid 0.05 noborder t "(y-z)"
+unset multiplot
+

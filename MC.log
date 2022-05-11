@@ -1,0 +1,284 @@
+Monte Carlo for bosons. Source code of 5/VII/2021
+
+
+Starting OpenMP parallelization ...
+  Hello World from thread = 25
+  Hello World from thread = 2
+  Hello World from thread = 15
+  Hello World from thread = 26
+  Hello World from thread = 6
+  Hello World from thread = 13
+  Hello World from thread = 10
+  Hello World from thread = 3
+  Hello World from thread = 0
+
+  Hello World from thread = 11
+  Hello World from thread = 18
+  Hello World from thread = 14
+  Hello World from thread = 7
+  Hello World from thread = 27
+  Hello World from thread = 9
+
+  Hello World from thread = 4
+  Hello World from thread = 31
+  Hello World from thread = 1
+  Hello World from thread = 12
+  Hello World from thread = 19
+  Hello World from thread = 20
+  Hello World from thread = 23
+  Hello World from thread = 16
+  Hello World from thread = 30
+  Hello World from thread = 29
+  Hello World from thread = 21
+  total number of processors is 32
+done
+
+ node 20, Ran2() random number generator started with seed 199
+ node 14, Ran2() random number generator started with seed 173
+ node 0, Ran2() random number generator started with seed 101
+ node 6, Ran2() random number generator started with seed 131
+ node 27, Ran2() random number generator started with seed 241
+ node 13, Ran2() random number generator started with seed 167
+ node 12, Ran2() random number generator started with seed 163
+ node 25, Ran2() random number generator started with seed 233
+ node 11, Ran2() random number generator started with seed 157
+ node 5, Ran2() random number generator started with seed 127
+ node 26, Ran2() random number generator started with seed 239
+ node 23, Ran2() random number generator started with seed 227
+ node 1, Ran2() random number generator started with seed 103
+ node 4, Ran2() random number generator started with seed 113
+ node 24, Ran2() random number generator started with seed 229
+ node 21, Ran2() random number generator started with seed 211
+ node 9, Ran2() random number generator started with seed 149
+ node 17, Ran2() random number generator started with seed 191
+ node 18, Ran2() random number generator started with seed 193
+ node 16, Ran2() random number generator started with seed 181
+ node 28, Ran2() random number generator started with seed 251
+ node 22, Ran2() random number generator started with seed 223
+ node 2, Ran2() random number generator started with seed 107
+ node 29, Ran2() random number generator started with seed 257
+ node 31, Ran2() random number generator started with seed 269
+ node 19, Ran2() random number generator started with seed 197
+ node 3, Ran2() random number generator started with seed 109
+ node 10, Ran2() random number generator started with seed 151
+ node 15, Ran2() random number generator started with seed 179
+ node 30, Ran2() random number generator started with seed 263
+ node 8, Ran2() random number generator started with seed 139
+ node 7, Ran2() random number generator started with seed 137
+  Goal precision: double (16 digits after comma)
+  Branching version: permits system collapse
+  Checking datatypes, number of digits in mantissa ...
+    float       7 
+    double      15 
+    long double 15 
+    DOUBLE      15 
+
+floor()  particles move in X Y Z directions
+  Derivatives will be calculated analytically (kinetic energy, drift force)
+Loading parameters ... 
+  MC=0
+  SmartMC=1
+  Npop=100
+  NwalkersMax=200
+  N=5
+  a=1.000000
+  omega_x=1.000000
+  alpha_x=0.500000
+  omega_y=1.000000
+  alpha_y=0.500000
+  omega_z=1.000000
+  alpha_z=0.500000
+  Apar=1.000000
+  Bpar=6.000000
+  generate_new_coordinates=1
+  dt=0.001000
+  acceptance_rate=50.000000
+  dt_vmc=0.100000
+  gridRD=200
+  gridPD=200
+  gridNk=200
+  NkMaxTrap=4.000000
+  measure_energy=1
+  measure_RadDistr=1
+  measure_PairDistr=1
+  measure_OBDM=0
+  measure_tVMC=0
+  RDmax=3.000000
+  PDmax=30.000000
+  RDzmax=3.000000
+  blck_heating=0
+  blck=100
+  Niter=1000
+  Nmeasure=10
+  file_append=0  Frequencies of the harmonic trap:
+    omega_x = 1.000000
+    omega_y = 1.000000
+    omega_z = 1.000000
+
+
+
+  Type of the algorithm: VMC: moving particles one by one
+  Trial pair wavefunctions: WARNING: Hard-sphere check is NOT enabled
+  Number of dimensions: 3D
+  Boundary conditions: absent (external confinement)
+done
+  Size of the box will be calculated using Ndens = 5
+  Correlation functions are measured: in the middle point of the drift (Rpp)
+  One component system (no spin)
+  Interaction potential (not included in Eloc part):   Unit of energy: h^2/ma^2
+WARNING: Maximal allowed energy Eck = 1.000000e+10 
+
+  L=1.000000e+02 
+  Potential energy, corr functions, etc. are calculated up to the cut-off distance Rc= 50.000000
+  OBDM.kmin = 1.002506e-02 
+  OBDM.kmax = 4.000000e+00 
+
+Constructing particle-particle wavefunction ...
+    Schiff Verlett w.f. will be used
+WARNING: Rpar -> Rpar L/2 (1.000000 -> 50.000000)
+  Schiff Verlet trial wavefunction
+done
+Saving wavefunction (1 - 1) components
+
+Testing grids...
+  continuity of w.f. at Rpar:
+    f(R) ... 
+    Continuity of Jastrow term at Rpar is not checked.
+    Testing first derivative (second order difference method), 0.05 <r<50.05 ...
+
+    Testing local energy, 0.05 <r<50.05 ...
+
+done
+
+  Interaction potential (not included in Eloc part): 1/r^6
+  Summation of interaction potential over all images: disabled
+  Tail energy 1.673841e-07 
+  Mean-field energy (g2=1) 1.675516e+21 
+  Harmonic potential X: 0.500000 x^2
+  Harmonic potential Y: 0.500000 y^2
+  Harmonic potential Z: 0.500000 z^2
+  Generating particle coordinates ...   done
+  
+Memory allocation: scattered arrays (i.e. non optimized)
+  Checking memory copy speed ... 
+    loop copy: 9.000000e-03 sec
+    memcopy: 1.400000e-02 sec
+    speed gain: 0.642857 times
+  done
+
+Energy -3.28095e+15  = 5 * -6.56189e+14 , EFF = 6.5619e+14
+Starting heating...
+Starting measurements...
+1  0sec dt= 0.1 (64.52%) <E>=3.34684 E=3.45491 EFF=3.53729 Ekin=2.17825 Epot=1.27666   <113826.30,113445.99>
+2  0sec dt= 0.1 (61.59%) <E>=3.30333 E=3.46469 EFF=2.65492 Ekin=2.22603 Epot=1.23866   <228004.95,227766.51>
+3  1sec dt= 0.2 (59.33%) <E>=3.29783 E=3.25812 EFF=3.28796 Ekin=1.98742 Epot=1.27069   <342890.14,343000.45>
+4  1sec dt= 0.2 (57.22%) <E>=3.29468 E=3.56067 EFF=2.65401 Ekin=2.29885 Epot=1.26182   <456999.76,456713.54>
+5  1sec dt= 0.2 (55.88%) <E>=3.30674 E=3.51666 EFF=3.47034 Ekin=2.24266 Epot=1.274   <571392.48,571297.90>
+6  1sec dt= 0.2 (54.23%) <E>=3.30763 E=3.35086 EFF=2.88938 Ekin=2.03679 Epot=1.31407   <686579.45,685862.99>
+7  1sec dt= 0.3 (53.55%) <E>=3.30603 E=3.724 EFF=2.88783 Ekin=2.47555 Epot=1.24845   <801261.65,799971.11>
+8  1sec dt= 0.3 (51.39%) <E>=3.30571 E=3.15126 EFF=2.77305 Ekin=1.84528 Epot=1.30598   <915481.26,913252.36>
+9  1sec dt= 0.3 (52.04%) <E>=3.30008 E=3.43436 EFF=2.65733 Ekin=2.18884 Epot=1.24551   <1029504.32,1026290.40>
+10  2sec dt= 0.3 (52.33%) <E>=3.30161 E=3.3759 EFF=3.136 Ekin=2.08492 Epot=1.29098   <1143872.25,1141849.19>
+11  2sec dt= 0.3 (51.85%) <E>=3.30067 E=3.50446 EFF=3.0548 Ekin=2.24502 Epot=1.25944   <1258152.80,1255777.19>
+12  2sec dt= 0.3 (51.55%) <E>=3.29927 E=3.23859 EFF=3.35288 Ekin=1.95619 Epot=1.2824   <1372418.88,1368688.64>
+13  2sec dt= 0.3 (51.21%) <E>=3.29804 E=3.33147 EFF=3.30638 Ekin=2.01265 Epot=1.31882   <1486549.45,1482962.51>
+14  2sec dt= 0.3 (50.77%) <E>=3.29971 E=3.75446 EFF=2.60425 Ekin=2.48354 Epot=1.27092   <1600147.58,1596665.64>
+15  2sec dt= 0.3 (50.90%) <E>=3.29952 E=3.10843 EFF=3.30403 Ekin=1.86062 Epot=1.24781   <1714369.08,1711838.11>
+16  2sec dt= 0.4 (50.16%) <E>=3.30065 E=3.50624 EFF=3.24313 Ekin=2.2137 Epot=1.29255   <1828282.31,1826165.22>
+17  2sec dt= 0.4 (50.03%) <E>=3.29829 E=3.28937 EFF=2.76111 Ekin=1.97704 Epot=1.31233   <1942339.91,1940537.39>
+18  3sec dt= 0.4 (50.38%) <E>=3.29829 E=2.3056 EFF=4.78685 Ekin=1.01223 Epot=1.29337   <2056629.17,2054028.42>
+19  3sec dt= 0.4 (50.04%) <E>=3.29812 E=3.27688 EFF=2.87391 Ekin=2.0522 Epot=1.22468   <2171075.87,2169261.23>
+20  3sec dt= 0.4 (50.19%) <E>=3.29831 E=3.45809 EFF=3.58513 Ekin=2.17066 Epot=1.28743   <2285338.02,2283742.47>
+21  3sec dt= 0.4 (49.82%) <E>=3.29961 E=2.84775 EFF=4.41509 Ekin=1.53544 Epot=1.31231   <2399985.03,2399962.77>
+22  3sec dt= 0.4 (50.09%) <E>=3.29666 E=3.04218 EFF=3.44595 Ekin=1.7865 Epot=1.25568   <2514224.40,2514480.99>
+23  3sec dt= 0.4 (50.32%) <E>=3.29755 E=3.49541 EFF=3.44656 Ekin=2.18588 Epot=1.30954   <2628606.59,2629301.14>
+24  3sec dt= 0.4 (49.99%) <E>=3.29661 E=3.10725 EFF=3.42847 Ekin=1.83279 Epot=1.27445   <2743258.48,2743575.69>
+25  3sec dt= 0.4 (49.83%) <E>=3.29716 E=3.50042 EFF=2.99701 Ekin=2.24613 Epot=1.25429   <2857980.55,2859621.55>
+26  4sec dt= 0.4 (49.84%) <E>=3.29831 E=2.86693 EFF=4.21495 Ekin=1.60692 Epot=1.26001   <2972248.50,2973703.76>
+27  4sec dt= 0.4 (50.03%) <E>=3.29795 E=3.24257 EFF=3.69204 Ekin=1.96531 Epot=1.27726   <3086966.36,3087727.60>
+28  4sec dt= 0.4 (50.26%) <E>=3.29925 E=3.25729 EFF=3.6087 Ekin=1.94248 Epot=1.31481   <3201417.77,3202650.88>
+29  4sec dt= 0.4 (50.16%) <E>=3.29878 E=3.13117 EFF=3.29419 Ekin=1.85284 Epot=1.27834   <3316076.44,3317310.06>
+30  4sec dt= 0.4 (49.89%) <E>=3.2989 E=3.66663 EFF=3.36319 Ekin=2.38004 Epot=1.28659   <3430331.60,3432206.64>
+31  4sec dt= 0.4 (49.94%) <E>=3.29905 E=3.82478 EFF=2.94457 Ekin=2.56097 Epot=1.26381   <3544780.89,3546293.19>
+32  4sec dt= 0.4 (50.01%) <E>=3.29971 E=3.34314 EFF=3.44063 Ekin=2.06609 Epot=1.27705   <3658751.47,3659689.04>
+33  5sec dt= 0.4 (50.05%) <E>=3.29925 E=3.20701 EFF=3.76495 Ekin=1.91114 Epot=1.29587   <3773407.51,3774263.99>
+34  5sec dt= 0.4 (49.69%) <E>=3.29983 E=3.40662 EFF=3.01493 Ekin=2.1587 Epot=1.24792   <3887293.20,3888055.47>
+35  5sec dt= 0.4 (49.84%) <E>=3.29929 E=3.49561 EFF=3.05865 Ekin=2.21957 Epot=1.27604   <4001841.11,4003567.12>
+36  5sec dt= 0.4 (50.26%) <E>=3.30038 E=3.44621 EFF=3.0998 Ekin=2.13356 Epot=1.31265   <4115987.56,4116967.80>
+37  5sec dt= 0.4 (49.90%) <E>=3.29928 E=3.41354 EFF=2.92467 Ekin=2.13675 Epot=1.27679   <4230493.15,4231668.73>
+38  5sec dt= 0.4 (50.17%) <E>=3.29828 E=3.2353 EFF=3.37324 Ekin=1.98193 Epot=1.25337   <4344510.71,4346400.34>
+39  5sec dt= 0.4 (50.23%) <E>=3.29766 E=3.29608 EFF=2.71949 Ekin=2.0432 Epot=1.25288   <4459194.09,4460373.36>
+40  5sec dt= 0.4 (49.95%) <E>=3.29792 E=3.37821 EFF=3.03251 Ekin=2.14024 Epot=1.23797   <4573452.34,4574238.28>
+41  6sec dt= 0.4 (50.14%) <E>=3.2978 E=3.38871 EFF=3.45645 Ekin=2.13096 Epot=1.25775   <4688009.32,4689159.66>
+42  6sec dt= 0.4 (50.08%) <E>=3.29842 E=3.55408 EFF=3.06793 Ekin=2.2966 Epot=1.25748   <4801806.66,4802975.21>
+43  6sec dt= 0.4 (49.42%) <E>=3.29949 E=3.25176 EFF=3.74193 Ekin=1.94819 Epot=1.30357   <4915834.64,4917907.36>
+44  6sec dt= 0.4 (49.96%) <E>=3.2997 E=3.38448 EFF=3.72463 Ekin=2.09592 Epot=1.28856   <5030539.00,5032126.39>
+45  6sec dt= 0.4 (50.26%) <E>=3.29943 E=3.34334 EFF=3.11362 Ekin=2.05669 Epot=1.28665   <5145658.82,5147268.92>
+46  6sec dt= 0.4 (50.15%) <E>=3.29892 E=3.1899 EFF=3.54312 Ekin=1.89962 Epot=1.29028   <5260156.98,5262366.71>
+47  6sec dt= 0.4 (50.14%) <E>=3.29899 E=3.30592 EFF=3.26731 Ekin=2.04823 Epot=1.25769   <5374460.21,5377325.49>
+48  6sec dt= 0.4 (49.87%) <E>=3.29945 E=3.51161 EFF=3.52317 Ekin=2.25423 Epot=1.25738   <5488892.46,5491637.42>
+49  7sec dt= 0.4 (50.15%) <E>=3.29914 E=3.30421 EFF=3.3946 Ekin=2.02594 Epot=1.27827   <5603045.22,5605572.13>
+50  7sec dt= 0.4 (50.12%) <E>=3.29918 E=3.24263 EFF=3.70361 Ekin=1.95158 Epot=1.29104   <5716966.95,5719349.63>
+51  7sec dt= 0.4 (49.88%) <E>=3.30016 E=3.6559 EFF=3.11584 Ekin=2.38836 Epot=1.26755   <5830536.41,5831922.91>
+52  7sec dt= 0.4 (49.62%) <E>=3.29979 E=3.03884 EFF=3.92848 Ekin=1.76449 Epot=1.27435   <5944790.16,5946943.40>
+53  7sec dt= 0.4 (49.91%) <E>=3.29888 E=3.19095 EFF=3.35912 Ekin=1.92218 Epot=1.26877   <6059045.70,6061127.56>
+54  7sec dt= 0.4 (49.99%) <E>=3.29901 E=2.26309 EFF=4.57467 Ekin=0.983707 Epot=1.27938   <6173297.06,6175016.56>
+55  7sec dt= 0.4 (49.96%) <E>=3.29929 E=3.28519 EFF=3.47109 Ekin=2.01297 Epot=1.27222   <6287461.49,6289823.58>
+56  8sec dt= 0.4 (50.13%) <E>=3.29937 E=3.51185 EFF=3.04255 Ekin=2.22924 Epot=1.2826   <6401835.42,6403232.00>
+57  8sec dt= 0.4 (50.23%) <E>=3.29897 E=3.24244 EFF=3.03841 Ekin=2.00278 Epot=1.23966   <6516355.70,6517314.76>
+58  8sec dt= 0.4 (50.24%) <E>=3.29969 E=3.5078 EFF=2.9082 Ekin=2.21898 Epot=1.28882   <6630128.90,6631468.32>
+59  8sec dt= 0.4 (49.90%) <E>=3.29945 E=3.44411 EFF=3.5518 Ekin=2.19689 Epot=1.24722   <6744388.76,6745157.54>
+60  8sec dt= 0.4 (49.85%) <E>=3.30039 E=3.20909 EFF=3.23483 Ekin=1.91488 Epot=1.29421   <6858561.79,6859855.90>
+61  8sec dt= 0.4 (49.62%) <E>=3.30019 E=3.11602 EFF=3.2748 Ekin=1.84959 Epot=1.26643   <6972746.85,6973359.80>
+62  8sec dt= 0.4 (49.97%) <E>=3.30056 E=3.0159 EFF=3.7866 Ekin=1.76324 Epot=1.25266   <7086884.45,7087227.11>
+63  8sec dt= 0.4 (50.05%) <E>=3.30046 E=3.14684 EFF=3.67748 Ekin=1.85013 Epot=1.29671   <7201660.92,7201918.96>
+64  9sec dt= 0.4 (50.31%) <E>=3.30031 E=3.27545 EFF=3.42018 Ekin=2.01857 Epot=1.25688   <7315773.81,7316202.07>
+65  9sec dt= 0.4 (49.96%) <E>=3.30052 E=2.92069 EFF=3.93233 Ekin=1.61141 Epot=1.30928   <7430252.54,7430474.73>
+66  9sec dt= 0.4 (50.18%) <E>=3.29971 E=3.26404 EFF=3.70765 Ekin=1.97528 Epot=1.28876   <7544760.10,7544662.02>
+67  9sec dt= 0.4 (50.06%) <E>=3.2996 E=3.30378 EFF=3.4085 Ekin=2.04467 Epot=1.25912   <7658871.50,7658054.56>
+68  9sec dt= 0.4 (49.85%) <E>=3.29955 E=3.48345 EFF=3.60919 Ekin=2.22097 Epot=1.26248   <7773224.90,7771719.64>
+69  9sec dt= 0.4 (50.12%) <E>=3.30018 E=3.39343 EFF=3.02118 Ekin=2.10503 Epot=1.2884   <7887893.07,7886128.54>
+70  9sec dt= 0.4 (49.50%) <E>=3.29898 E=3.15789 EFF=3.81922 Ekin=1.84334 Epot=1.31455   <8002583.78,8000097.39>
+71  9sec dt= 0.4 (50.16%) <E>=3.29905 E=3.35016 EFF=3.23484 Ekin=2.10292 Epot=1.24723   <8116769.50,8114917.44>
+72 10sec dt= 0.4 (50.08%) <E>=3.29857 E=3.45624 EFF=3.19096 Ekin=2.18451 Epot=1.27173   <8231043.02,8230351.85>
+73 10sec dt= 0.4 (50.12%) <E>=3.29803 E=3.40326 EFF=2.73762 Ekin=2.14165 Epot=1.2616   <8345943.22,8344555.85>
+74 10sec dt= 0.4 (50.07%) <E>=3.2981 E=3.30033 EFF=3.56554 Ekin=2.01845 Epot=1.28188   <8460789.90,8459939.22>
+75 10sec dt= 0.4 (49.89%) <E>=3.29834 E=3.47145 EFF=3.23527 Ekin=2.22841 Epot=1.24303   <8574551.84,8573614.17>
+76 10sec dt= 0.4 (50.15%) <E>=3.29837 E=3.61057 EFF=3.06591 Ekin=2.36036 Epot=1.25021   <8688872.99,8688265.44>
+77 10sec dt= 0.4 (49.96%) <E>=3.29882 E=3.25644 EFF=3.5075 Ekin=1.93803 Epot=1.31841   <8802855.58,8803273.05>
+78 10sec dt= 0.4 (49.69%) <E>=3.29836 E=3.38803 EFF=3.31302 Ekin=2.13017 Epot=1.25785   <8917020.24,8917021.04>
+79 11sec dt= 0.4 (49.85%) <E>=3.29826 E=3.53318 EFF=3.37975 Ekin=2.2752 Epot=1.25799   <9031610.60,9030365.90>
+80 11sec dt= 0.4 (49.95%) <E>=3.29828 E=3.35677 EFF=3.67025 Ekin=2.08495 Epot=1.27181   <9145937.37,9144371.36>
+81 11sec dt= 0.4 (50.19%) <E>=3.29789 E=3.50513 EFF=3.10915 Ekin=2.24411 Epot=1.26102   <9260193.88,9260320.84>
+82 11sec dt= 0.4 (50.12%) <E>=3.29803 E=3.40071 EFF=2.82233 Ekin=2.11745 Epot=1.28326   <9374685.47,9374073.23>
+83 11sec dt= 0.4 (50.30%) <E>=3.29765 E=3.17796 EFF=3.65983 Ekin=1.88514 Epot=1.29282   <9489380.50,9489923.25>
+84 11sec dt= 0.4 (50.12%) <E>=3.29752 E=3.27995 EFF=3.42339 Ekin=1.99915 Epot=1.2808   <9603425.45,9602543.68>
+85 11sec dt= 0.4 (50.30%) <E>=3.29749 E=3.42149 EFF=3.09373 Ekin=2.1541 Epot=1.26739   <9718043.59,9716826.87>
+86 11sec dt= 0.4 (50.12%) <E>=3.2979 E=3.66781 EFF=2.79668 Ekin=2.43791 Epot=1.2299   <9832384.30,9830558.77>
+87 12sec dt= 0.4 (49.84%) <E>=3.29835 E=3.54846 EFF=3.22205 Ekin=2.30211 Epot=1.24634   <9946793.31,9945939.12>
+88 12sec dt= 0.4 (49.49%) <E>=3.29802 E=3.17462 EFF=3.9426 Ekin=1.90119 Epot=1.27343   <10061995.70,10060818.19>
+89 12sec dt= 0.4 (50.13%) <E>=3.29821 E=3.36532 EFF=3.20414 Ekin=2.08577 Epot=1.27955   <10176625.27,10176379.98>
+90 12sec dt= 0.4 (50.38%) <E>=3.29798 E=3.05573 EFF=3.31261 Ekin=1.8231 Epot=1.23263   <10291707.05,10290758.53>
+91 12sec dt= 0.4 (50.03%) <E>=3.2978 E=3.38147 EFF=3.06726 Ekin=2.10678 Epot=1.27469   <10405839.06,10404405.60>
+92 12sec dt= 0.4 (50.12%) <E>=3.29826 E=3.13936 EFF=3.41852 Ekin=1.86533 Epot=1.27403   <10519878.76,10518864.66>
+93 12sec dt= 0.4 (50.15%) <E>=3.29856 E=3.59854 EFF=2.71235 Ekin=2.36156 Epot=1.23698   <10634576.39,10633318.83>
+94 12sec dt= 0.4 (50.01%) <E>=3.29849 E=3.61742 EFF=3.04896 Ekin=2.34146 Epot=1.27596   <10749440.04,10748258.14>
+95 13sec dt= 0.4 (50.17%) <E>=3.29889 E=3.28721 EFF=3.08125 Ekin=2.02902 Epot=1.25819   <10863686.02,10862435.09>
+96 13sec dt= 0.4 (49.63%) <E>=3.29884 E=3.67074 EFF=3.22101 Ekin=2.39586 Epot=1.27489   <10978312.61,10977069.04>
+97 13sec dt= 0.4 (49.80%) <E>=3.29888 E=3.54226 EFF=3.32143 Ekin=2.28322 Epot=1.25904   <11093224.33,11090958.04>
+98 13sec dt= 0.4 (50.07%) <E>=3.29934 E=3.42139 EFF=3.13554 Ekin=2.10167 Epot=1.31972   <11207689.89,11204921.07>
+99 13sec dt= 0.4 (49.91%) <E>=3.29939 E=3.33348 EFF=3.08386 Ekin=2.09327 Epot=1.24021   <11322169.09,11319572.49>
+100 13sec dt= 0.4 (50.22%) <E>=3.29997 E=3.39954 EFF=3.09515 Ekin=2.10255 Epot=1.29699   <11436362.70,11434052.35>
+Evar = 3.299971803968113e+00 +/- 2.822587e-03
+EFF  = 3.315622e+00 +/- 4.496378e-03
+Epot = 1.274874e+00 +/- 2.484691e-04
+Ekin = 2.025098e+00 +/- 2.893572e-03
+Eint = -1.500448
+  Total energy 3.299971971352170e+00
+
+time: Ttotal   13.00 sec = 0.00 hours = 0.00 days
+time: Tprecise 13.21 sec = 0.00 hours = 0.00 days
+time used for doing simulation    8.67 seconds
+time used for doing measurements  4.21 seconds
+time used for doing communication 0.13 seconds
+done
