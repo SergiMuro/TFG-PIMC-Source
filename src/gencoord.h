@@ -1,7 +1,7 @@
 /*gencoord.h*/
 #ifndef _GENERATE_COORDINATES_H_
 #define _GENERATE_COORDINATES_H_
-
+//comentario de prueba
 #define ON 1
 #define OFF 0
 #define MAX 1000
