@@ -284,7 +284,7 @@ DOUBLE PathIntegralPseudopotentialSdetailed(DOUBLE *Skincheck, DOUBLE *Sdeltache
     for(i=0; i<N; i++) for(j=i+1; j<N; j++) Sdelta += PropagatorPseudopotenial1D_ij(mA,  aA, tau, W[w].z[i],   W[w].z[j],   W[w1].z[i],   W[w1].z[j]);
 
 #ifdef EXTERNAL_POTENTIAL
-    for(i=0; i<N; i++) Epot += Vext(W[w].x[i], W[w].y[i], W[w].z[i], i);
+    for(i=0; i<N; i++) Epot += Vext(W[w].x[i], W[w].y[i], W[w].z[i]);
 #endif
 #else // two component code
 #ifdef FINITE_MASS_COMPONENT_UP // mA finite
@@ -297,8 +297,8 @@ DOUBLE PathIntegralPseudopotentialSdetailed(DOUBLE *Skincheck, DOUBLE *Sdeltache
 #endif
     for(i=0; i<Nup; i++) for(j=0; j<Ndn; j++)   Sdelta += PropagatorPseudopotenial1D_ij(mAB, a,  tau, W[w].z[i],   W[w].zdn[j], W[w1].z[i],   W[w1].zdn[j]);
 #ifdef EXTERNAL_POTENTIAL
-    for(i=0; i<Nup; i++) Epot += VextUp(W[w].x[i], W[w].y[i], W[w].z[i], i);
-    for(i=0; i<Ndn; i++) Epot += VextDn(W[w].xdn[i], W[w].ydn[i], W[w].zdn[i], i);
+    for(i=0; i<Nup; i++) Epot += VextUp(W[w].x[i], W[w].y[i], W[w].z[i]);
+    for(i=0; i<Ndn; i++) Epot += VextDn(W[w].xdn[i], W[w].ydn[i], W[w].zdn[i]);
 #endif
 #endif
   }
@@ -438,8 +438,8 @@ void PathIntegralPseudopotentialStaging(void) {
     for(j=0; j<N; j++) if(j!= i) dS += PropagatorPseudopotenial1D_ij(mA, aA, tau, W[w].z[i],  W[w].z[j], W[w1].z[i],  W[w1].z[j]);
     for(j=0; j<N; j++) if(j!= i) dS -= PropagatorPseudopotenial1D_ij(mA, aA, tau, Wp[w].z[i], W[w].z[j], Wp[w1].z[i], W[w1].z[j]);
 #ifdef EXTERNAL_POTENTIAL
-    Epot += Vext(W[w].x[i], W[w].y[i], W[w].z[i], i); //!!! to be completed
-    Epot -= Vext(Wp[w].x[i], Wp[w].y[i], Wp[w].z[i], i);
+    Epot += Vext(W[w].x[i], W[w].y[i], W[w].z[i]); //!!! to be completed
+    Epot -= Vext(Wp[w].x[i], Wp[w].y[i], Wp[w].z[i]);
 #endif
 #else // two component code
 #ifdef FINITE_MASS_COMPONENT_UP // mA finite
@@ -450,8 +450,8 @@ void PathIntegralPseudopotentialStaging(void) {
 #endif
     for(j=0; j<N; j++) if(j!= i)   Sdelta += PropagatorPseudopotenial1D_ij(mAB, a,  tau, W[w].z[i],   W[w].zdn[j], W[w1].z[i],   W[w1].zdn[j]);
 #ifdef EXTERNAL_POTENTIAL
-    Epot += VextUp(W[w].x[i], W[w].y[i], W[w].z[i], i);
-    Epot += VextDn(W[w].xdn[i], W[w].ydn[i], W[w].zdn[i], i);
+    Epot += VextUp(W[w].x[i], W[w].y[i], W[w].z[i]);
+    Epot += VextDn(W[w].xdn[i], W[w].ydn[i], W[w].zdn[i]);
 #endif
 #endif
   }

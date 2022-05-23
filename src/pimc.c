@@ -209,8 +209,8 @@ void PIMCPseudopotentialMoveOneByOne(int w) {
     dSkin -= PropagatorLaplacian(mA, tau, Wp[w].z[i] - W[w2].z[i]);
 #endif
 #ifdef EXTERNAL_POTENTIAL
-  dEpot += VextUp(W[w].x[i], W[w].y[i], W[w].z[i], i); // new external potential energy
-  dEpot -= VextUp(Wp[w].z[i],Wp[w].y[i],Wp[w].z[i],i); // old external potential energy
+  dEpot += VextUp(W[w].x[i], W[w].y[i], W[w].z[i]); // new external potential energy
+  dEpot -= VextUp(Wp[w].z[i],Wp[w].y[i],Wp[w].z[i]); // old external potential energy
 #endif
 
     // contribution from Pseudopotential

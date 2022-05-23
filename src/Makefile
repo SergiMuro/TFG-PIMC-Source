@@ -4,10 +4,10 @@ CCOMPILER = gcc
 FCOMPILER = cc
 #FLAGS = -g
 #FLAGS = -O2 -static-intel
-FLAGS = -O3 -openmp
+#FLAGS = -O3 -openmp
 # use -g for valgrind
 #FLAGS = -O3 -qopenmp
-#FLAGS = -O3 -qopenmp
+#FLAGS = -O3 -fopenmp
 #FLAGS = -O3
 #FLAGS = -O0 -g
 # -Wall -ffast-math
