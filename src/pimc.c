@@ -18,7 +18,6 @@ void PIMCMoveOneByOne(int w) {
   int i,k;
   int w1,w2; // index of the walker with [w-1] and [w+1]
   DOUBLE du;
-  DOUBLE xi;
   DOUBLE dx,dy,dz;
   DOUBLE x,y,z;
   DOUBLE xp,yp,zp;
@@ -93,7 +92,7 @@ void PIMCMoveOneByOne(int w) {
     for(k=0; k<N; k++) {
       if(k != i) {
         // calculate new potential energy
-        /*dr[0] = xp - W[w1].x[k];
+        dr[0] = xp - W[w1].x[k];
         dr[1] = yp - W[w1].y[k];
         dr[2] = zp - W[w1].z[k];
         r2 = FindNearestImage(&dr[0], &dr[1], &dr[2]);
@@ -102,9 +101,9 @@ void PIMCMoveOneByOne(int w) {
         dr[1] = yp - W[w2].y[k];
         dr[2] = zp - W[w2].z[k];
         r2 = FindNearestImage(&dr[0], &dr[1], &dr[2]);
-        du -= tau*InteractionEnergy(sqrt(r2));*/
+        du -= tau*InteractionEnergy(sqrt(r2));
 
-        /*// calculate old potential energy
+        // calculate old potential energy
         dr[0] = x - W[w1].x[k];
         dr[1] = y - W[w1].y[k];
         dr[2] = z - W[w1].z[k];
@@ -114,33 +113,26 @@ void PIMCMoveOneByOne(int w) {
         dr[1] = y - W[w2].y[k];
         dr[2] = z - W[w2].z[k];
         r2 = FindNearestImage(&dr[0], &dr[1], &dr[2]);
-        du += tau*InteractionEnergy(sqrt(r2));*/
+        du += tau*InteractionEnergy(sqrt(r2));
       }
     }
-
-    // The Metropolis code
-    // f = Exp(u), p = Exp(up-u)
-    if(du > 0) {
-      W[w].x[i] = xp;
-      W[w].y[i] = yp;
-      W[w].z[i] = zp;
-      W[w].U -= du;
-      accepted++;
-    }
-    else {
-      xi = Random();
-      if(xi<Exp(2.*du)) {
+    if (Metropolis(du)){
         W[w].x[i] = xp;
         W[w].y[i] = yp;
         W[w].z[i] = zp;
         W[w].U -= du;
         accepted++;
-      }
-      else {
-        rejected++;
-      }
     }
+    else{rejected++;}
   }
+}
+
+/************************** PIMC Staging ************************************/
+void PIMCStaging(int w) {
+}
+
+/************************** PIMC Worm ***************************************/
+void PIMCWorm(int w){
 }
 
 
@@ -248,5 +240,12 @@ void PIMCPseudopotentialMoveOneByOne(int w) {
       rejected_one++;
     }
   }
+}
+
+bool private Metropolis(DOUBLE du){
+    if(du > 0) return true;
+    DOUBLE xi = Random();
+    if(xi<Exp(2.*du)) return true;
+    return false;
 }
 
